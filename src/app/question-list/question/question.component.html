@@ -1,0 +1,19 @@
+<table class="table question table-striped table-borderless">
+  <thead>
+  <tr>
+    <td class="question__text">{{ question?.sortOrder }}. {{ question?.question }}</td>
+    <td class="question__option-group">Labiausiai</td>
+    <td class="question__option-group">Mažiausiai</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr
+    answer-variant
+    *ngFor="let answerVariant of question?.answerVariants"
+    [answerVariant]="answerVariant"
+    [question]="question"
+    (answered)="onAnswered($event)"
+    class="answer"
+  ></tr>
+  </tbody>
+</table>

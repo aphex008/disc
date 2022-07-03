@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row justify-content-lg-center">
+    <div class="col-lg-8">
+      <h1 class="title">Profilio nustatymo klausimai</h1>
+      <app-question-list
+        [questions]="questions"
+        (answered)="onAnswered()"
+      ></app-question-list>
+      <app-result
+        [resultAggregate]="resultAggregate"
+        [questions]="questions"
+        [types]="types"
+        [resultSegments]="resultSegments"
+      ></app-result>
+      <app-strategy
+        [resultAggregate]="resultAggregate"
+        [strategies]="strategies"
+      ></app-strategy>
+    </div>
+  </div>
+</div>

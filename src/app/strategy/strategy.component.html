@@ -1,0 +1,38 @@
+<h1>Elgsenos strategijų sudarymas</h1>
+<h2>DiSC elgsenos stiliai</h2>
+<p>
+  Žemiau esanti lentelė leis Jums geriau suprasti, ko šis žmogus siekia ir ko baiminasi, bei atpažinti jo ar jos
+  stipriąsias savybes.
+  Perskaitykite informaciją apie šią dimensiją ir pasižymėkite stipriąsias savybes, kurios, Jūsų nuomone, geriausiai
+  apibūdina šio amens elgseną darbe.
+</p>
+<table class="table table-striped table-borderless list">
+  <thead>
+  <tr>
+    <td class="list__header">DiSC stilius</td>
+    <td class="list__header">Siekia</td>
+    <td class="list__header">Baiminasi</td>
+    <td class="list__header">Stipriosios savybės</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr  *ngFor="let type of resultAggregate.getDominant()">
+    <td>{{ type.title }}</td>
+    <td>
+      <ul>
+        <li *ngFor="let seek of getStrategyByType(type).seeks">{{seek}}.</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li *ngFor="let fear of getStrategyByType(type).fears">{{fear}}.</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li *ngFor="let strength of getStrategyByType(type).strengths">{{strength}}.</li>
+      </ul>
+    </td>
+  </tr>
+  </tbody>
+</table>

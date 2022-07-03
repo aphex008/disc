@@ -1,0 +1,43 @@
+.disc-table {
+  &__type-header {
+    font-size: 300%;
+    color: white;
+    background-color: gray;
+    text-align: center;
+    padding: 30px 5px;
+    &--segment {
+      font-size: 100%;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      padding: 5px 15px;
+    }
+    &--earned {
+      background-color: black;
+    }
+  }
+
+  &__segment{
+    text-align: center;
+    &--medium {
+      background-color: silver;
+    }
+    &--index {
+      font-size: 150%;
+      font-weight: bold;
+    }
+  }
+  &__segment-score {
+    height: 50px;
+    width: 100%;
+  }
+  &__score {
+    &--earned{
+      background-color: orange;
+      padding: 5px 10px;
+      color: white;
+      font-weight: bold;
+      border-radius: 15px;
+      display: inline;
+    }
+  }
+}
