@@ -1,0 +1,13 @@
+<td class="answer__text">{{ answerVariant?.answerText }}</td>
+<td class="answer__input">
+  <mat-checkbox
+    [(ngModel)]="inputMost"
+    (change)="onAnswerMost(answerVariant.typeMost, $event)"
+  ></mat-checkbox>
+</td>
+<td class="answer__input">
+  <mat-checkbox
+    [(ngModel)]="inputLeast"
+    (change)="onAnswerLeast(answerVariant.typeLeast, $event)"
+  ></mat-checkbox>
+</td>

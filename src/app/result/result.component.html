@@ -1,0 +1,39 @@
+<h1>Rezultatas</h1>
+<table class="table disc-table">
+  <thead>
+  <tr>
+    <td
+      *ngFor="let type of types"
+      class="w-25"
+    >
+      <div
+        class="disc-table__type-header"
+        [ngClass]="{'disc-table__type-header--earned' : resultAggregate.count(type) > mediumIndex}"
+      >{{type.title}}</div>
+    </td>
+    <td>
+      <div class="disc-table__type-header disc-table__type-header--segment">Segmentas</div>
+    </td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr
+    *ngFor="let index of segmentNumbers"
+    [ngClass]="{'disc-table__segment--medium' : index === mediumIndex}"
+    class="disc-table__segment"
+  >
+    <td
+      *ngFor="let type of types"
+    >
+      <div
+        *ngFor="let score of getSegment(type, index).scores"
+        class="disc-table__score"
+        [ngClass]="{'disc-table__score--earned' : score === resultAggregate.count(type)}"
+      >{{score}}</div>
+    </td>
+    <td class="disc-table__segment--index">{{index}}</td>
+  </tr>
+  </tbody>
+</table>
+<br>
+<br>
